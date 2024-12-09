@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Guestbook</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+        #guestbook { max-width: 600px; margin: auto; text-align: left; }
+        #messages { border: 1px solid #ddd; padding: 10px; max-height: 300px; overflow-y: auto; }
+        .message { margin: 10px 0; padding: 10px; border-bottom: 1px solid #eee; }
+        .fade-out { animation: fadeOut 1s forwards; }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; display: none; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Digital Guestbook</h1>
+    <div id="guestbook">
+        <div id="messages"></div>
+        <form id="message-form">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
